@@ -1,3 +1,5 @@
+ghcr.io/hamburg-port-authority/helm-popeye-oci/popeye:1.0.0-dc332d
+
 # Helm Popeye
 
 [![Contributors][contributors-shield]][contributors-url]
@@ -16,13 +18,11 @@ Popeye is a readonly tool, it does not alter any of your Kubernetes resources in
 
 ## How to use
 
-The chart is published via oci repository here on github via `oci://ghcr.io/deb4sh/helm-popeye`.
+The chart is published via oci repository here on github via `oci://ghcr.io/hamburg-port-authority/helm-popeye-oci`.
 A general usage guide for using oci-based registries is provided via the official helm documentation available [here](https://helm.sh/docs/topics/registries/)
 
 ```
-helm repod add popeye oci://ghcr.io/deb4sh/helm-popeye
-helm repo update
-helm install popeye oci://ghcr.io/deb4sh/helm-popeye --version 0.0.0-e7609a
+helm install popeye oci://ghcr.io/hamburg-port-authority/helm-popeye-oci/popeye --version 1.0.0-dc332d
 ```
 
 > NOTE: Remember this is an oci registry. You need to login with your desired container runtime first. 
@@ -35,10 +35,10 @@ kind: Secret
 metadata:
   labels:
     argocd.argoproj.io/secret-type: repository
-  name: ghcr-io-deb4sh-popeye
+  name: ghcr-io-deb4sh-popeye-oci
   namespace: argocd
 stringData:
-  url: ghcr.io/deb4sh/helm-popeye
+  url: ghcr.io/hamburg-port-authority/helm-popeye-oci
   name: popeye
   type: helm
   enableOCI: "true"
@@ -55,8 +55,8 @@ version: 1.0.0
 description: This chart deploys popeye.
 dependencies:
   - name: popeye
-    version: 0.0.0-63cb61
-    repository: oci://ghcr.io/deb4sh/helm-popeye
+    version: 1.0.0-dc332d
+    repository: oci://ghcr.io/hamburg-port-authority/helm-popeye-oci
 ```
 
 A general value overlay may look like.
