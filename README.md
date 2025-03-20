@@ -1,5 +1,3 @@
-ghcr.io/hamburg-port-authority/helm-popeye-oci/popeye:1.0.0-dc332d
-
 # Helm Popeye
 
 [![Contributors][contributors-shield]][contributors-url]
